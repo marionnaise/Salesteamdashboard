@@ -56,7 +56,7 @@ function Form() {
 
         {currentUser?.account_type === 'rep' ? (
           <label htmlFor="deal-name">
-            Name:
+            Prénom :
             <input
               id="deal-name"
               type="text"
@@ -70,7 +70,7 @@ function Form() {
           </label>
         ) : (
           <label htmlFor="deal-name">
-            Name:
+            Prénom :
             <select
               id="deal-name"
               name="name"
@@ -85,7 +85,7 @@ function Form() {
         }
 
         <label htmlFor="deal-value">
-          Amount: $
+          Montant (€) :
           <input
             id="deal-value"
             type="number"
@@ -106,7 +106,7 @@ function Form() {
           disabled={isPending}
           aria-busy={isPending}
         >
-          {isPending ? 'Adding...' : "Add Deal"}
+          {isPending ? 'Ajout...' : "Ajouter devis"}
         </button>
       </form>
 

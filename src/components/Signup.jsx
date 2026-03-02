@@ -48,7 +48,7 @@ const Signup = () => {
             password.
           </div>
 
-          <h2 className="form-title">Insciption</h2>
+          <h2 className="form-title">Inscription</h2>
           <p>
             Déjà un compte ?{' '}
             <Link className="form-link" to="/">

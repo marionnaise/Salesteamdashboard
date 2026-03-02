@@ -99,9 +99,9 @@ function Dashboard() {
       <div
         className="chart-container"
         role="region"
-        aria-label="Sales chart and data"
+        aria-label="Devis envoyés"
       >
-        <h2>Total Sales This Quarter ($)</h2>
+        <h2>Devis signés par l'équipe (€)</h2>
         <div style={{ flex: 1 }}>
           <Chart
             options={{

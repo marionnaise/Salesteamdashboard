@@ -26,13 +26,13 @@ h2 {
 header {
   background-color: #134e32;
   width: 100vw;
-  box-sizing: border-box;/* new */
+  box-sizing: border-box;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  padding: 0.4rem;/* new */
-  height: 7rem;/* new */
+  padding: 0.4rem 1.5rem;
+  height: 7rem;
   display: flex;
   flex-direction: column;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -60,7 +60,7 @@ header h1 {
 
 .header-email h2 {
   margin: 0;
-  font-size: 0.8rem;/* new */
+  font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 400;
   letter-spacing: 0px;

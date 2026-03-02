@@ -22,7 +22,7 @@ function Header() {
   };
 
   const accountTypeMap = {
-    rep: 'Sales Rep',
+    rep: 'Délegué commercial',
     admin: 'Admin',
   };
 
@@ -39,7 +39,7 @@ function Header() {
           aria-label="User account navigation"
         >
           <h2>
-            <span className="sr-only">Logged in as:</span>
+            <span className="sr-only">Connecté en tant que :</span>
             {currentUser?.name} ({displayAccountType})
           </h2>
           {error && (
@@ -47,8 +47,8 @@ function Header() {
               {error}
             </div>
           )}
-          <button onClick={handleSignOut} aria-label="Sign out of your account">
-            Sign out
+          <button onClick={handleSignOut} aria-label="Se déconnecter">
+            Se déconnecter
           </button>
         </div>
         <h1>
