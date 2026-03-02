@@ -377,8 +377,11 @@ input:disabled {
 }
 
 /* landing header */
-.landing-header {
-text-align: center;
+.landing-header{
+  text-align: center;
+}
+
+.landing-title {
 font-size: 3.5rem;
 line-height: 1.2;
 margin-bottom: 0.7rem;
@@ -393,6 +396,12 @@ background-clip: text;
 -webkit-text-fill-color: transparent;
 animation: fadeIn 0.8s ease-out;
 }
+
+.landing-slogan{
+color: #082c1b;
+animation: fadeIn 0.8s ease-out;
+}
+
 
 @keyframes fadeIn {
   from {
