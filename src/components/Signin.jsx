@@ -1,6 +1,7 @@
 import { useActionState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
+import AppHeader from './AppHeader';
 
 const Signin = () => {
   const { signInUser } = useAuth();
@@ -30,7 +31,7 @@ const Signin = () => {
 
   return (
     <>
-      <h1 className="landing-header">CommerCEO</h1>
+      <AppHeader/>
       <div className="sign-form-container">
         <form
           action={submitAction}

@@ -10,10 +10,10 @@ function Form() {
       const submittedName = formData.get('name');
       const user = users.find((u) => u.name === submittedName);
 
-      if (!user | !value) {
+      if (!user) {
         return new Error('Invalid user selected');
       }
-
+      
       const newDeal = {
         user_id: user.id,
         value: formData.get('value'),
