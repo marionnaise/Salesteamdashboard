@@ -48,15 +48,15 @@ const Signup = () => {
             password.
           </div>
 
-          <h2 className="form-title">Sign up today!</h2>
+          <h2 className="form-title">Insciption</h2>
           <p>
-            Already have an account?{' '}
+            Déjà un compte ?{' '}
             <Link className="form-link" to="/">
-              Sign in
+              Se connecter
             </Link>
           </p>
 
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">Prénom</label>
           <input
             className="form-input"
             type="text"
@@ -84,7 +84,7 @@ const Signup = () => {
             disabled={isPending}
           />
 
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Mot de passe</label>
           <input
             className="form-input"
             type="password"
@@ -103,7 +103,7 @@ const Signup = () => {
             aria-required="true"
             aria-label="Select your role"
           >
-            <legend>Select your role</legend>
+            <legend>Séectionner un rôle</legend>
             <div className="radio-group">
               <label>
                 <input
@@ -116,7 +116,7 @@ const Signup = () => {
               </label>
               <label>
                 <input type="radio" name="account-type" value="rep" required />{' '}
-                Sales Rep
+                Délégué commercial
               </label>
             </div>
           </fieldset>
@@ -127,7 +127,7 @@ const Signup = () => {
             disabled={isPending}
             aria-busy={isPending}
           >
-            {isPending ? 'Signing up...' : 'Sign Up'}
+            {isPending ? 'Inscription...' : "S'inscrire"}
           </button>
 
           {error && (

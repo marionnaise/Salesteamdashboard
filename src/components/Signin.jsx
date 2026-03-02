@@ -43,11 +43,11 @@ const Signin = () => {
             password.
           </div>
 
-          <h2 className="form-title">Sign in</h2>
+          <h2 className="form-title">Connexion</h2>
           <p>
-            Don't have an account yet?{' '}
+            Pas encore de compte ?{' '}
             <Link className="form-link" to="/signup">
-              Sign up
+              S'inscrire
             </Link>
           </p>
 
@@ -65,7 +65,7 @@ const Signin = () => {
             disabled={isPending}
           />
 
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Mot de passe</label>
           <input
             className="form-input"
             type="password"
@@ -85,7 +85,7 @@ const Signin = () => {
             className="form-button"
             aria-busy={isPending}
           >
-            {isPending ? 'Signing in...' : 'Sign In'}
+            {isPending ? 'Connexion...' : 'Se connecter'}
           </button>
 
           {error && (
