@@ -70,7 +70,7 @@ function Header() {
               strokeLinecap="round"
             />
           </svg>
-          <span>Sales Team Dashboard</span>
+          <span>Dashboard équipe</span>
         </h1>
       </header>
     </>
