@@ -7,9 +7,9 @@ export default function TeamList(){
     console.log('users for list : ',users)
     
     const listEls = users?.map(user => (
-        <div key={user.id} className="team-member-card">
+        <div key={user.id} className="dbgrid2">
             <li>
-            <span className="member-name">{user.name}</span>
+            <span className="member-name">{user.name} - </span>
             <span className={`badge ${user.account_type}`}>
                 {user.account_type === 'admin' ? '⭐ Admin' : 'Délégué.e'}
             </span>
@@ -21,7 +21,7 @@ export default function TeamList(){
 
     return(
         <div
-        className="dashboard-container">
+        className="db-grid2">
             <h2>Equipe commerciale</h2>
             <span>{users.length} personnes dans l'équipe : </span>
             <ul className="team-list-wrapper">

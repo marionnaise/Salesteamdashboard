@@ -1,6 +1,7 @@
 import { useActionState } from 'react';
 import supabase from '../../supabase-client';
 import { useAuth } from '../../context/AuthContext';
+import { notifySalesChange } from '../../services/salesService';
 
 export default function Form() {
   const { users, session } = useAuth();
@@ -25,6 +26,9 @@ export default function Form() {
         return new Error('Failed to add deal');
       }
 
+      // notify other components that a new deal was added
+      notifySalesChange();
+
       return null;
     },
     null
@@ -43,7 +47,7 @@ export default function Form() {
   };
 
   return (
-    <div className="dashboard-container add-form-container">
+    <div className="db-card">
       <h2>Ajouter un devis</h2>
       <form
         action={submitAction}

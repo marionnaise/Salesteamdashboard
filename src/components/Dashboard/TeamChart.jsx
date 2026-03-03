@@ -1,61 +1,17 @@
 import { Chart } from 'react-charts';
-import supabase from '../../supabase-client';
-import { useEffect, useState } from 'react';
+import { useRealtimeData } from '../../hooks/useSalesData';
+import { fetchMetrics } from '../../services/salesService';
 
 export default function TeamChart(){
 
-  const [metrics, setMetrics] = useState([]);
-
-  useEffect(() => {
-    fetchMetrics();
-
-
-    const channel = supabase
-      .channel('deal-changes')
-      .on(
-        'postgres_changes',
-        { 
-          event: '*', 
-          schema: 'public', 
-          table: 'sales_deals' 
-        },
-        payload => {
-          console.log(payload);
-          fetchMetrics();
-        })
-      .subscribe();
-
-    return () => {
-      supabase.removeChannel(channel);
-    };
-  }, []);
-
-
-  async function fetchMetrics() {
-    try {
-      const { data, error } = await supabase
-        .from('sales_deals')
-        .select(
-          `
-          value.sum(),
-          ...user_profiles!inner(
-            name
-          )
-          `,
-        );
-      if (error) {
-        throw error;
-      }
-      // console.log("Fetched metrics:", data);
-      setMetrics(data);
-    } catch (error) {
-      console.error('Error fetching metrics:', error.message);
-    }
-  }
+  const { data: metrics, loading, error } = useRealtimeData(fetchMetrics);
+  
+  // Ensure metrics is always an array
+  const metricsData = Array.isArray(metrics) ? metrics : [];
 
   const chartData = [
     {
-      data: metrics.map((m) => ({
+      data: metricsData.map((m) => ({
         primary: m.name,
         secondary: m.sum,
       })),
@@ -70,8 +26,8 @@ export default function TeamChart(){
   };
 
   function y_max() {
-    if (metrics.length > 0) {
-      const maxSum = Math.max(...metrics.map((m) => m.sum));
+    if (metricsData.length > 0) {
+      const maxSum = Math.max(...metricsData.map((m) => m.sum));
       return maxSum + 2000;
     };
     return 5000;
@@ -91,25 +47,29 @@ export default function TeamChart(){
   ];
     return(
     <div
-        className="dashboard-container chart-container"
+        className="db-card chart-container"
         role="region"
         aria-label="Devis envoyés"
       >
         <h2>Devis signés par l'équipe (€)</h2>
-        <div style={{ flex: 1 }}>
-          <Chart
-            options={{
-              data: chartData,
-              primaryAxis,
-              secondaryAxes,
-              type: 'bar',
-              defaultColors: ['#58d675'],
-              tooltip: {
-                show: false,
-              },
-            }}
-          />
-        </div>
+        {loading && <p>Chargement...</p>}
+        {error && <p style={{ color: 'red' }}>Erreur lors du chargement des données</p>}
+        {!loading && !error && (
+          <div style={{ flex: 1 }}>
+            <Chart
+              options={{
+                data: chartData,
+                primaryAxis,
+                secondaryAxes,
+                type: 'bar',
+                defaultColors: ['#58d675'],
+                tooltip: {
+                  show: false,
+                },
+              }}
+            />
+          </div>
+        )}
       </div>
       )
 }

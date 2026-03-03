@@ -1,6 +1,7 @@
 import Form from '../components/Dashboard/Form';
 import TeamChart from '../components/Dashboard/TeamChart'
 import TeamList from '../components/Dashboard/TeamList'
+import HighlightStats from '../components/Dashboard/HighlightStats';
 
 function Dashboard() {
 
@@ -10,9 +11,16 @@ function Dashboard() {
       role="region"
       aria-label="Dashboard d'équipe"
     >
-      <TeamList/>
-      <Form />
-      <TeamChart/>
+      <div className='db-banner'>
+        <HighlightStats/>
+      </div>
+      <div className='dashboard-container' id='db-flex'>
+        <div className='db-left'>
+          <Form />
+          <TeamList/>
+        </div>
+        <TeamChart/>
+      </div>
     </div>
   );
 };
