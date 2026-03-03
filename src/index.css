@@ -103,52 +103,51 @@ header h1 {
   font-size: 1rem;
 }
 
-.dashboard-wrapper {
+.dashboard-wrapper{
+  margin-top: 150px;
+}
+
+.dashboard-container {
+  background-color: #f9f9f9;
+  border: 1px solid #e4e4e4;
+  padding: 1.5rem 2rem;
+  width: 90%;
+  border-radius: 5px;
+  margin: 7px auto 7px auto;
+}
+
+.team-member-card{
   display: flex;
-  flex-direction: column;
-  height: 100vh;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
 }
 
 .chart-container {
-  width: 90%;
-  height: 65vh;
-  background-color: #f9f9f9;
-  margin: 8.5rem auto 7px auto;
-  padding: 0 10px 20px 10px;
+  height: 50vh;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  border-radius: 5px;
-  border: 1px solid #e4e4e4;
   flex-grow: 1;
 }
 
-.chart-container h2 {
+
+.dashboard-wrapper h2 {
   margin: 0;
   padding: 1rem;
   color: #082c1b;
-}
+} 
 
-.add-form-container {
-  background-color: #ffffff;
-  width: 90%;
-  border-radius: 5px;
-  margin: 5px auto 20px auto;
-  padding: 8px;
-  border: 1px solid #e4e4e4;
-  flex-shrink: 0;
-}
-
-.add-form-container form {
+.dashboard-container form {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   gap: 40px;
   align-items: center;
   margin: 5px;
 }
 
-.add-form-container .error-message {
+.dashboard-container .error-message {
   color: red;
   text-align: center;
   margin: 0;

@@ -1,5 +1,5 @@
 import { Chart } from 'react-charts';
-import supabase from '../supabase-client';
+import supabase from '../../supabase-client';
 import { useEffect, useState } from 'react';
 
 export default function TeamChart(){
@@ -91,7 +91,7 @@ export default function TeamChart(){
   ];
     return(
     <div
-        className="chart-container"
+        className="dashboard-container chart-container"
         role="region"
         aria-label="Devis envoyés"
       >

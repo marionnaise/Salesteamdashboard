@@ -1,8 +1,8 @@
 import { useActionState } from 'react';
-import supabase from '../supabase-client';
-import { useAuth } from '../context/AuthContext';
+import supabase from '../../supabase-client';
+import { useAuth } from '../../context/AuthContext';
 
-function Form() {
+export default function Form() {
   const { users, session } = useAuth();
 
   const [error, submitAction, isPending] = useActionState(
@@ -43,7 +43,8 @@ function Form() {
   };
 
   return (
-    <div className="add-form-container">
+    <div className="dashboard-container add-form-container">
+      <h2>Ajouter un devis</h2>
       <form
         action={submitAction}
         aria-label="Add new sales deal"
@@ -118,5 +119,3 @@ function Form() {
     </div>
   );
 };
-
-export default Form;

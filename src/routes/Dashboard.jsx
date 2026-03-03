@@ -1,5 +1,6 @@
-import Form from '../components/Form';
-import TeamChart from '../components/TeamChart'
+import Form from '../components/Dashboard/Form';
+import TeamChart from '../components/Dashboard/TeamChart'
+import TeamList from '../components/Dashboard/TeamList'
 
 function Dashboard() {
 
@@ -9,8 +10,9 @@ function Dashboard() {
       role="region"
       aria-label="Dashboard d'équipe"
     >
-      <TeamChart/>
+      <TeamList/>
       <Form />
+      <TeamChart/>
     </div>
   );
 };
