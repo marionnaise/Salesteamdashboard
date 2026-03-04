@@ -21,7 +21,7 @@ export default function TeamList(){
 
     return(
         <div
-        className="db-grid2">
+        className="db-card">
             <h2>Equipe commerciale</h2>
             <span>{users.length} personnes dans l'équipe : </span>
             <ul className="team-list-wrapper">
