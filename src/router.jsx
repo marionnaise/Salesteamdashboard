@@ -2,6 +2,7 @@ import Signin from './components/Signin';
 import Signup from './components/Signup';
 import Header from './components/Header';
 import Dashboard from './routes/Dashboard';
+import Footer from './components/Footer'
 import RootRedirect from './routes/RootRedirect';
 import ProtectedRoute from './components/ProtectedRoute';
 import { createBrowserRouter } from 'react-router-dom';
@@ -25,6 +26,7 @@ export const router = createBrowserRouter([
       <ProtectedRoute>
         <Header />
         <Dashboard />
+        <Footer/>
       </ProtectedRoute>
     ),
   },
