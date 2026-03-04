@@ -93,7 +93,7 @@ export async function fetchSalesStats() {
       fetchTotalSales(),
     ]);
 
-    const SALES_OBJECTIVE = 10000;
+    const SALES_OBJECTIVE = 30000;
     const objectivePercentage = (totalSales / SALES_OBJECTIVE) * 100;
 
     return {

@@ -51,7 +51,7 @@ export default function HighlightStats(){
 
                 {/* Objective Percentage */}
                 <div className="stat-card">
-                    <div className="stat-label">🎯 Objectif (10k€)</div>
+                    <div className="stat-label">🎯 Objectif (30k€)</div>
                     <div className="stat-value">
                         {stats?.objectivePercentage || 0}%
                     </div>
