@@ -2,3 +2,9 @@
 .env
 .env.local
 .env.stack
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
